@@ -1,0 +1,14 @@
+# ATOM EDITOR INDENTATION CONFIGS
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true # doesn't work yet
+
+[*.{html}]
+indent_size = 4
+
+[*.js]
+indent_size = 2

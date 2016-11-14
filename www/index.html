@@ -38,18 +38,175 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+    <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css"/>
+    <script src="lib/onsen/js/onsenui.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <title>Agenda</title>
 </head>
 
 <body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home.html')" tappable>
+            Home
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('settings.html')" tappable>
+            Settings
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('about.html')" tappable>
+            About
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+
+  <ons-template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
         </div>
-    </div>
+        <div class="center">
+          Agenda
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; padding-top: 20px;">
+        <ons-tabbar>
+          <ons-tab label="Tudo" page="all.html" active>
+          </ons-tab>
+          <ons-tab label="Férias" page="vacances.html">
+          </ons-tab>
+          <ons-tab label="FDS" page="vacances.html">
+          </ons-tab>
+        </ons-tabbar>
+      </p>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="settings.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Settings
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          About
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+
+
+  <ons-template id="all.html">
+    <ons-page>
+      <ons-list>
+        <ons-list-header>Default</ons-list-header>
+        <ons-list-item>Item A</ons-list-item>
+        <ons-list-item>Item B</ons-list-item>
+
+        <ons-list-header>Tappable / Ripple</ons-list-header>
+        <ons-list-item tappable>Tap me</ons-list-item>
+
+        <ons-list-header>Chevron</ons-list-header>
+        <ons-list-item modifier="chevron" tappable>Chevron</ons-list-item>
+
+        <ons-list-header>Thumbnails and titles</ons-list-header>
+        <ons-list-item>
+          <div class="left">
+            <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
+          </div>
+          <div class="center">
+            <span class="list__item__title">Cutest kitty</span><span class="list__item__subtitle">On the Internet</span>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Icons</ons-list-header>
+        <ons-list-item>
+          <div class="left">
+            <ons-icon icon="md-face" class="list__item__icon"></ons-icon>
+          </div>
+          <div class="center">
+            Icon
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Switch</ons-list-header>
+        <ons-list-item>
+          <div class="center">
+            Turn it on
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>Switch and icon</ons-list-header>
+        <ons-list-item>
+          <div class="left">
+            <ons-icon icon="md-face" class="list__item__icon"></ons-icon>
+          </div>
+          <div class="center">
+            Icon and switch
+          </div>
+          <div class="right">
+            <ons-switch></ons-switch>
+          </div>
+        </ons-list-item>
+
+        <ons-list-header>No divider</ons-list-header>
+        <ons-list-item modifier="nodivider">Item A</ons-list-item>
+        <ons-list-item modifier="nodivider">Item B</ons-list-item>
+
+        <ons-list-header>Long divider</ons-list-header>
+        <ons-list-item modifier="longdivider">Item A</ons-list-item>
+        <ons-list-item modifier="longdivider">Item B</ons-list-item>
+      </ons-list>
+
+      <br />
+
+      <ons-list modifier="inset">
+        <ons-list-header>Inset list</ons-list-header>
+        <ons-list-item modifier="longdivider">Item A</ons-list-item>
+        <ons-list-item modifier="longdivider">Item B</ons-list-item>
+      </ons-list>
+
+      <br />
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="vacances.html">
+    <ons-page>
+      <p style="text-align: center;">
+        This is the second page.
+      </p>
+    </ons-page>
+  </ons-template>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">

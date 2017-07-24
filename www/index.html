@@ -40,10 +40,11 @@
 
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css"/>
     <link rel="stylesheet" href="lib/onsen/css/onsen-css-components.css"/>
+    <script src="js/plugins/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Agenda</title>
+    <title>Memoria</title>
 </head>
 
 <body>
@@ -75,7 +76,12 @@
           </ons-toolbar-button>
         </div>
         <div class="center">
-          Agenda
+          Memoria
+        </div>
+        <div class="right">
+          <ons-toolbar-button>
+            <ons-icon icon="md-search"></ons-icon>
+          </ons-toolbar-button>
         </div>
       </ons-toolbar>
       <p style="text-align: center; padding-top: 20px;">
@@ -103,6 +109,14 @@
           Settings
         </div>
       </ons-toolbar>
+      <div style="text-align: center; margin-top: 30px;">
+        <p>
+          <ons-input id="folder" modifier="underbar" placeholder="Folder" float></ons-input>
+        </p>
+        <p style="margin-top: 30px;">
+          <ons-button onclick="saveSettings()">Save</ons-button>
+        </p>
+      </div>
     </ons-page>
   </ons-template>
 
@@ -125,77 +139,20 @@
   <ons-template id="all.html">
     <ons-page>
       <ons-list>
-        <ons-list-header>Default</ons-list-header>
-        <ons-list-item>Item A</ons-list-item>
-        <ons-list-item>Item B</ons-list-item>
-
-        <ons-list-header>Tappable / Ripple</ons-list-header>
-        <ons-list-item tappable>Tap me</ons-list-item>
-
-        <ons-list-header>Chevron</ons-list-header>
-        <ons-list-item modifier="chevron" tappable>Chevron</ons-list-item>
-
-        <ons-list-header>Thumbnails and titles</ons-list-header>
+        <ons-list-header>February 2016</ons-list-header>
         <ons-list-item>
           <div class="left">
             <img class="list__item__thumbnail" src="http://placekitten.com/g/40/40">
           </div>
           <div class="center">
-            <span class="list__item__title">Cutest kitty</span><span class="list__item__subtitle">On the Internet</span>
+            <span class="list__item__title">Dia 1 da viagem à Madeira</span>
+            <span class="list__item__subtitle">On the Internet</span>
           </div>
         </ons-list-item>
 
-        <ons-list-header>Icons</ons-list-header>
-        <ons-list-item>
-          <div class="left">
-            <ons-icon icon="md-face" class="list__item__icon"></ons-icon>
-          </div>
-          <div class="center">
-            Icon
-          </div>
-        </ons-list-item>
-
-        <ons-list-header>Switch</ons-list-header>
-        <ons-list-item>
-          <div class="center">
-            Turn it on
-          </div>
-          <div class="right">
-            <ons-switch></ons-switch>
-          </div>
-        </ons-list-item>
-
-        <ons-list-header>Switch and icon</ons-list-header>
-        <ons-list-item>
-          <div class="left">
-            <ons-icon icon="md-face" class="list__item__icon"></ons-icon>
-          </div>
-          <div class="center">
-            Icon and switch
-          </div>
-          <div class="right">
-            <ons-switch></ons-switch>
-          </div>
-        </ons-list-item>
-
-        <ons-list-header>No divider</ons-list-header>
-        <ons-list-item modifier="nodivider">Item A</ons-list-item>
-        <ons-list-item modifier="nodivider">Item B</ons-list-item>
-
-        <ons-list-header>Long divider</ons-list-header>
-        <ons-list-item modifier="longdivider">Item A</ons-list-item>
-        <ons-list-item modifier="longdivider">Item B</ons-list-item>
-      </ons-list>
-
-      <br />
-
-      <ons-list modifier="inset">
-        <ons-list-header>Inset list</ons-list-header>
-        <ons-list-item modifier="longdivider">Item A</ons-list-item>
-        <ons-list-item modifier="longdivider">Item B</ons-list-item>
-      </ons-list>
-
-      <br />
+        <ons-fab position="bottom right">
+          <ons-icon icon="md-plus"></ons-icon>
+        </ons-fab>
     </ons-page>
   </ons-template>
 
@@ -207,7 +164,8 @@
     </ons-page>
   </ons-template>
 
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="js/filereader.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();

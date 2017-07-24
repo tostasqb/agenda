@@ -1,34 +1,50 @@
 var app = {
-    // Application Constructor
-    initialize: function() {
-      this.bindEvents();
-      ons.platform.select('android');
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        // var parentElement = document.getElementById(id);
-        // var listeningElement = parentElement.querySelector('.listening');
-        // var receivedElement = parentElement.querySelector('.received');
-        //
-        // listeningElement.setAttribute('style', 'display:none;');
-        // receivedElement.setAttribute('style', 'display:block;');
-        //
-        // console.log('Received Event: ' + id);
-    }
+  // Application Constructor
+  initialize: function() {
+    this.bindEvents();
+
+    // default platform
+    ons.platform.select('android');
+
+    // get initial configurations from file and load first list
+    this.getConfig(function() {
+      app.loadList();
+    });
+  },
+  // Bind Event Listeners
+  bindEvents: function() {
+    document.addEventListener('deviceready', this.onDeviceReady, false);
+  },
+  // deviceready Event Handler
+  onDeviceReady: function() {
+    app.receivedEvent('deviceready');
+  },
+  // Update DOM on a Received Event
+  receivedEvent: function(id) {
+
+  },
+  // Bind configurations
+  getConfig: function(callback) {
+    $.get("config.json", function(data, status) {
+      console.log('config read');
+      app.config = data;
+      if(callback) { callback(); }
+    });
+  },
+  setConfig: function() {
+    // set new path
+  },
+  loadList: function() {
+    path = app.config.editable.content_path.value;
+    reader.read(path);
+    // $.get(path, function(data) {
+    //   cenas = "";
+    // });
+    console.log('load list');
+  },
+
+  // object variables
+  config: {}
 };
 
 window.fn = {};

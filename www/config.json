@@ -1,0 +1,11 @@
+{
+  "editable": {
+    "content_path": {
+      "label": "Pasta de ficheiros",
+      "value": "/opt/project/memoria/sample_data"
+    }
+  },
+  "native": {
+
+  }
+}

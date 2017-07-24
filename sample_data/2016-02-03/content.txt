@@ -1,0 +1,8 @@
+[TITLE]
+Third entry
+
+[TEXT]
+Donec blandit libero sem, sit amet pretium odio vestibulum non. Cras ex odio, interdum elementum finibus sit amet, egestas eu odio. Curabitur aliquet tellus id metus pretium, id sagittis erat bibendum. Pellentesque laoreet, libero eu lacinia interdum, metus velit euismod sapien, non sagittis tortor nisl quis nulla. Pellentesque porta dui eu nulla congue, sed varius velit ornare. Integer felis odio, tincidunt et orci at, luctus pharetra lorem. Aliquam elementum vitae justo sed viverra. Donec dictum aliquet arcu. Quisque pharetra, lacus quis viverra posuere, arcu libero aliquam ligula, sit amet bibendum quam velit eget ex. Proin ultricies est a nulla malesuada tempor. Sed eleifend, lacus eget euismod accumsan, nibh lorem eleifend mi, et convallis lacus lorem in tortor. Proin eu libero est.
+
+[TAGS]
+Travel, Dates
